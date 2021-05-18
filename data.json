@@ -42,14 +42,14 @@
       "title": "Generation G-1",
       "start": "1960/04/15",
       "end": "1984/10/02",
-      "color": 
+      "color": "117A84"
     },
     {
       "description": "The current generation",
       "title": "Generation G0",
       "start": "1984/10/03",
       "end": "2021/06/27",
-      "color": "#117A84"
+      "color": "#1EBFBF"
     },
     {
       "description": "A new generation (G+1) of Wawrzyniaks begins",
