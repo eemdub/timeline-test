@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Timeline Chart</title>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-timeline.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-data-adapter.min.js"></script>
+    <style type="text/css">
+      html,
+      body,
+      #container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>  
+    <div id="container"></div>
+    <script>
+      anychart.onDocumentReady(function () {
+ anychart.data.loadJsonFile(
+'https://gist.githubusercontent.com/shacheeswadia/c65106bb00db4236140b4f6052fde55a/raw/9ec2af927a8bb81433f2236b41c161260aa4950d/pfizer-comparison-timeline',   
+        function (data) {
+
+          // create timeline chart
+          var chart = anychart.timeline();
+
+          // set chart's title
+          chart
+            .title()
+            .enabled(true)
+            .useHtml(true)
+            .text(
+            '<span style = "color: #007cc2; font-size:20px;">PFizer/BioNTech Vaccine Timeline</span>' +
+            '<br/><span style="font-size: 16px;">(Comparing with other vaccines approved in USA)</span>'
+          );
+
+
+          // create the main timeline datapoints
+          for (var i = 0; i < data.pfizerTimeline.length; i++) {    
+            // create range series
+            var series = chart.range([
+              [
+                data.pfizerTimeline[i].title,
+                data.pfizerTimeline[i].start,
+                data.pfizerTimeline[i].end
+              ]
+            ])
+            .fill(function(d){
+              if(d.name == "Pfizer/BioNTech Trial"){
+                return "#FD8060"  
+              }else if(d.name == "Review"){
+                return "#FEE191"
+              }
+              return "#B0D8A4"
+            })
+            .stroke("none");
+
+            // set tooltip settings for the main timeline series
+            series
+              .tooltip()
+              .useHtml(true)
+              .titleFormat('{%x}')
+              .format(
+                data.pfizerTimeline[i].description
+                + '<br/><br/>Start: <b>{%start}{type:date}</b><br/>End: <b>{%end}{type:date}</b>'
+              );
+
+          }
+
+          // create dataset for the top datapoints
+          var pfizerDataSet = anychart.data.set(data.pfizerFacts);
+
+          // map the top datapoints
+          var pfizerMapping = pfizerDataSet.mapAs({
+            x: 'date',
+            value: 'title'
+          });
+
+          // create top series with moments
+          var pfizerMappingSeries = chart.moment(pfizerMapping);
+          pfizerMappingSeries.normal().markers().fill("#007cc2");
+
+          // set tooltip settings for the main timeline series
+          pfizerMappingSeries
+              .tooltip()
+              .useHtml(true)
+              .titleFormat('{%title}')
+              .format(
+                '{%description}'
+                + '<br/><br/>Date: <b>{%date}{type:date}</b><br/>'
+              );
+
+          var modernaData = [],
+              johnsonData =[],
+              novavaxData =[];
+
+          for (var i = 0; i < data.otherVaccines.length; i++) {    
+            if(data.otherVaccines[i].title.startsWith("Moderna")){
+              modernaData.push(data.otherVaccines[i]);
+            }else if(data.otherVaccines[i].title.startsWith("Johnson")){
+              johnsonData.push(data.otherVaccines[i]);
+            }else{
+              novavaxData.push(data.otherVaccines[i]);
+            }
+          }
+
+          // create dataset for the bottom datapoints - Moderna
+          var modernaDataset = anychart.data.set(modernaData);
+
+          // map the bottom dataset - Moderna
+          var modernaDatasetMapping = modernaDataset.mapAs({
+            x: 'date',
+            value: 'title'
+          });
+
+          // create bottom series - Moderna
+          var modernaSeries = chart.moment(modernaDatasetMapping);
+
+          // set the direction for the series
+          modernaSeries.direction("down");
+
+          // set tooltip settings for the Moderna series
+          modernaSeries
+              .tooltip()
+              .useHtml(true)
+              .titleFormat('{%title}')
+              .format(
+                '{%description}'
+                + '<br/><br/>Date: <b>{%date}{type:date}</b><br/>'
+              );
+
+          // create dataset for the bottom datapoints - Johnson
+          var johnsonDataset = anychart.data.set(johnsonData);
+
+          // map the bottom dataset - Johnson
+          var johnsonDatasetMapping =johnsonDataset.mapAs({
+            x: 'date',
+            value: 'title'
+          });
+
+          // create bottom series - Johnson
+          var johnsonSeries = chart.moment(johnsonDatasetMapping);
+
+          // set the direction for the series
+          johnsonSeries.direction("down");
+
+          // set tooltip settings for the Johnson series
+          johnsonSeries
+              .tooltip()
+              .useHtml(true)
+              .titleFormat('{%title}')
+              .format(
+                '{%description}'
+                + '<br/><br/>Date: <b>{%date}{type:date}</b><br/>'
+              );
+
+          // create dataset for the bottom datapoints - Novavax
+          var novavaxDataset = anychart.data.set(novavaxData);
+
+          // map the bottom dataset - Novavax
+          var novavaxDatasetMapping = novavaxDataset.mapAs({
+            x: 'date',
+            value: 'title'
+          });
+
+          // create bottom series - Novavax
+          var novavaxSeries = chart.moment(novavaxDatasetMapping);
+
+          // set the direction for the series
+         novavaxSeries.direction("down");
+
+          // set tooltip settings for the Novavax series
+          novavaxSeries
+              .tooltip()
+              .useHtml(true)
+              .titleFormat('{%title}')
+              .format(
+                '{%description}'
+                + '<br/><br/>Date: <b>{%date}{type:date}</b><br/>'
+              );
+
+          // set chart scale levels
+          chart.scale().zoomLevels([
+            [
+              { unit: 'month', count: 1 }
+            ]
+          ]);
+
+          // enable chart scroller
+          chart.scroller().enabled(true);
+
+          // create two text markers
+          var textMarker1 = chart.textMarker(0);
+          var textMarker2 = chart.textMarker(1);
+
+          // set the values of markers
+          textMarker1.value(data.pfizerTimeline[0].start);
+          textMarker2.value(data.pfizerTimeline[0].start);
+
+          // set the text of markers
+          textMarker1.useHtml(true);
+          textMarker1.text(
+            "Facts about Pfizer");
+          textMarker2.text(
+            "Facts about other vaccines in USA");
+
+          // configure the position of markers
+          textMarker1.anchor("leftcenter");
+          textMarker2.anchor("leftcenter");
+          textMarker1.rotation(0);
+          textMarker1.offsetY(160);
+          textMarker2.rotation(0);
+          textMarker2.offsetY(300);
+
+          // configure the font of markers
+          textMarker1.fontColor("#007cc2");
+          textMarker1.fontWeight(600);
+          textMarker2.fontWeight(600);
+
+          // set container id for the chart
+          chart.container('container');
+
+          // initiate chart drawing
+          chart.draw();
+
+        });
+      });
+    </script>
+  </body>
+</html>
