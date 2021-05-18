@@ -1,13 +1,33 @@
 {
   "pfizerFacts": [
     {
+      "description": "First of Generation G-2 born to Anthony F. and Mary Kathleen (Petrosky) Wawrzyniak, paternal grandfather to Gen-0",
+      "title": "Anthony F. Wawrzyniak, II",
+      "date": "1923/07/15"
+    },
+    {
+      "description": "First daughter born to Herbert and Catherine (Lacrosse) Johnson, paternal grandmother to Gen-0",
+      "title": "Mary Jane Johnson",
+      "date": "1924/07/28"
+    },
+    {
+      "description": "First son born to Tolliver W. and Anita I. (Rees) King, maternal grandfather to Gen-0",
+      "title": "Ralph W. King",
+      "date": "1928/12/06"
+    },
+    {
+      "description": "Only daughter, and last of Generation G-2, born to Joseph and Lena (Mathy) Euclide, maternal grandmother to Gen-0",
+      "title": "Joan M. Euclide",
+      "date": "1933/10/16"
+    },
+    {
       "description": "First of Generation G-1 born to Anthony F. and Mary J. (Johnson) Wawrzyniak",
       "title": "Mark M. Wawrzyniak",
       "date": "1960/04/15"
     },
     {
       "description": "First girl born to Ralph W. and Joan M. (Euclide) King",
-      "title": "Linda M. Wawrzyniak",
+      "title": "Linda M. King",
       "date": "1961/05/15"
     },
     {
@@ -38,7 +58,14 @@
   ],
   "pfizerTimeline": [
     {
-      "description": "The previous generation, parents to Gen0",
+      "description": "Parents to Gen-1; grandparents to Gen-0",
+      "title": "Generation G-2",
+      "start": "1923/07/15",
+      "end": "1960/04/14",
+      "color": "#00A950"
+    },
+    {
+      "description": "Parents to Gen-0; grandparents to Gen+1",
       "title": "Generation G-1",
       "start": "1960/04/15",
       "end": "1984/10/02",
@@ -46,7 +73,7 @@
     },
     {
       "description": "The current generation",
-      "title": "Generation G0",
+      "title": "Generation G-0",
       "start": "1984/10/03",
       "end": "2021/06/27",
       "color": "#1EBFBF"
@@ -55,6 +82,7 @@
       "description": "A new generation (G+1) of Wawrzyniaks begins",
       "title": "Generation G+1",
       "start": "2021/06/28",
+      "end": "2021/12/31",
       "color": "#E8FFFB"
     }
   ],
