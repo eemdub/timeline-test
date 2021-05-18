@@ -1,11 +1,6 @@
 {
   "pfizerFacts": [
     {
-      "description": "Joe and Sarah expecting a little girl, first member of the next generation of Wawrzyniaks in this branch of the family.",
-      "title": "Baby Wawrzyniak due",
-      "date": "2021/06/28"
-    },
-    {
       "description": "Approval of Pfizer/BioNTech vaccine in Canada",
       "title": "Canada Approval",
       "date": "2020/12/09"
@@ -29,6 +24,11 @@
       "description": "Call for fast-track approval of Pfizer/BioNTech vaccine by India",
       "title": "India Approval Call",
       "date": "2021/04/14"
+    },
+    {
+      "description": "Joe and Sarah expecting a little girl, first member of the next generation of Wawrzyniaks in this branch of the family.",
+      "title": "Baby Wawrzyniak due",
+      "date": "2021/06/28"
     }
   ],
   "pfizerTimeline": [
