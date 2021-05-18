@@ -1,28 +1,18 @@
 {
   "pfizerFacts": [
     {
-      "description": "Approval of Pfizer/BioNTech vaccine in Canada",
-      "title": "Canada Approval",
-      "date": "2020/12/09"
+      "description": "Patriarch of Generation G-1 born to Anthony F. and Mary J. (Johnson) Wawrzyniak",
+      "title": "Mark M. Wawrzyniak",
+      "date": "1960/04/15"
     },
     {
-      "description": "Sandra Lindsay, a critical care nurse from Northwell Long Island Jewish Medical Center was the first vaccinated in New York",
-      "title": "1st Pfizer Vaccine shot in US",
-      "date": "2020/12/14"
+      "description": "First-born of current generation born to Mark M. and Linda M. (King) Wawrzyniak",
+      "title": "Elizabeth M. Wawrzyniak",
+      "date": "1984/10/03"
     },
     {
-      "description": "Approval of Pfizer/BioNTech vaccine in EU",
-      "title": "EU Approval",
-      "date": "2020/12/21"
-    },    
-    {
-      "description": "Pfizer/BioNTech announced that their vaccine is highly effective in adolescents 12 to 15 years old",
-      "title": "Highly effective in adolescents",
-      "date": "2021/03/31"
-    },
-    {
-      "description": "Wawrzyniak Twins, last of the current generation, are born",
-      "title": "Sara J. Wawrzyniak & Thomas M. Wawrzyniak",
+      "description": "Twins and last of current generation born to Mark M. and Linda M. (King) Wawrzyniak",
+      "title": "Sara J. and Thomas M. Wawrzyniak"
       "date": "1994/10/19"
     },
     {
@@ -32,6 +22,12 @@
     }
   ],
   "pfizerTimeline": [
+    {
+      "description": "The previous generation, parents to Gen0",
+      "title": "Generation G-1",
+      "start": "1960/04/15",
+      "end": "1984/10/02"
+    },
     {
       "description": "The current generation",
       "title": "Generation G0",
