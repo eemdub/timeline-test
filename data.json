@@ -21,9 +21,9 @@
       "date": "2021/03/31"
     },
     {
-      "description": "Call for fast-track approval of Pfizer/BioNTech vaccine by India",
-      "title": "India Approval Call",
-      "date": "2021/04/14"
+      "description": "Wawrzyniak Twins, last of the current generation, are born",
+      "title": "Sara J. Wawrzyniak & Thomas M. Wawrzyniak",
+      "date": "1994/10/19"
     },
     {
       "description": "Joe and Sarah expecting a little girl, first member of the next generation of Wawrzyniaks in this branch of the family.",
@@ -33,24 +33,16 @@
   ],
   "pfizerTimeline": [
     {
-      "description": "Pfizer (along with Moderna) uses a new vaccine approach involving messenger RNA",
-      "title": "Pfizer/BioNTech Trial",
-      "start": "2020/03/29",
-      "end": "2020/11/29",
+      "description": "The current generation",
+      "title": "Generation G0",
+      "start": "1984/10/03",
+      "end": "2021/06/27",
       "color": "#00a950"
     },
     {
-      "description": "Pfizer was the first company to report positive phase 3 clinical data",
-      "title": "Review",
-      "start": "2020/11/29",
-      "end": "2020/12/11",
-      "color": "#00a950"
-    },
-    {
-      "description": "Dosage - 2 doses, 3 weeks apart",
-      "title": "US Approval",
-      "start": "2020/12/11",
-      "end": "2021/09/30",
+      "description": "A new generation of Wawrzyniaks begins.",
+      "title": "Generation G+1",
+      "start": "2021/06/28",
       "color": "#00a950"
     }
   ],
