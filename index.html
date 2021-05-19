@@ -61,20 +61,20 @@
           }
 
           // create dataset for the top datapoints
-          var pfizerDataSet = anychart.data.set(data.people);
+          var familyDataSet = anychart.data.set(data.people);
 
           // map the top datapoints
-          var pfizerMapping = pfizerDataSet.mapAs({
+          var familyMapping = familyDataSet.mapAs({
             x: 'date',
             value: 'title'
           });
 
           // create top series with moments
-          var pfizerMappingSeries = chart.moment(pfizerMapping);
-          pfizerMappingSeries.normal().markers().fill("#007cc2");
+          var familyMappingSeries = chart.moment(familyMapping);
+          familyMappingSeries.normal().markers().fill("#007cc2");
 
           // set tooltip settings for the main timeline series
-          pfizerMappingSeries
+          familyMappingSeries
               .tooltip()
               .useHtml(true)
               .titleFormat('{%title}')
