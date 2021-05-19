@@ -97,13 +97,13 @@
               johnsonData =[],
               novavaxData =[];
 
-          for (var i = 0; i < data.otherVaccines.length; i++) {    
-            if(data.otherVaccines[i].title.startsWith("Moderna")){
-              modernaData.push(data.otherVaccines[i]);
-            }else if(data.otherVaccines[i].title.startsWith("Johnson")){
-              johnsonData.push(data.otherVaccines[i]);
+          for (var i = 0; i < data.otherEvents.length; i++) {    
+            if(data.otherEvents[i].title.startsWith("Moderna")){
+              modernaData.push(data.otherEvents[i]);
+            }else if(data.otherEvents[i].title.startsWith("Johnson")){
+              johnsonData.push(data.otherEvents[i]);
             }else{
-              novavaxData.push(data.otherVaccines[i]);
+              novavaxData.push(data.otherEvents[i]);
             }
           }
 
