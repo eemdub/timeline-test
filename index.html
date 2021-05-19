@@ -93,37 +93,37 @@
                 + '<br/><br/>Date: <b>{%date}{type:date}</b><br/>'
               );
 
-          var modernaData = [],
-              johnsonData =[],
-              novavaxData =[];
+          var deathData = [],
+              weddingData =[],
+              otherData =[];
 
           for (var i = 0; i < data.otherEvents.length; i++) {    
-            if(data.otherEvents[i].title.startsWith("Moderna")){
-              modernaData.push(data.otherEvents[i]);
-            }else if(data.otherEvents[i].title.startsWith("Johnson")){
-              johnsonData.push(data.otherEvents[i]);
+            if(data.otherEvents[i].title.startsWith("Death")){
+              deathData.push(data.otherEvents[i]);
+            }else if(data.otherEvents[i].title.startsWith("Wedding")){
+              weddingData.push(data.otherEvents[i]);
             }else{
-              novavaxData.push(data.otherEvents[i]);
+              otherData.push(data.otherEvents[i]);
             }
           }
 
-          // create dataset for the bottom datapoints - Moderna
-          var modernaDataset = anychart.data.set(modernaData);
+          // create dataset for the bottom datapoints - death
+          var deathDataset = anychart.data.set(deathData);
 
-          // map the bottom dataset - Moderna
-          var modernaDatasetMapping = modernaDataset.mapAs({
+          // map the bottom dataset - death
+          var deathDatasetMapping = deathDataset.mapAs({
             x: 'date',
             value: 'title'
           });
 
-          // create bottom series - Moderna
-          var modernaSeries = chart.moment(modernaDatasetMapping);
+          // create bottom series - death
+          var deathSeries = chart.moment(deathDatasetMapping);
 
           // set the direction for the series
-          modernaSeries.direction("down");
+          deathSeries.direction("down");
 
-          // set tooltip settings for the Moderna series
-          modernaSeries
+          // set tooltip settings for the death series
+          deathSeries
               .tooltip()
               .useHtml(true)
               .titleFormat('{%title}')
@@ -132,23 +132,23 @@
                 + '<br/><br/>Date: <b>{%date}{type:date}</b><br/>'
               );
 
-          // create dataset for the bottom datapoints - Johnson
-          var johnsonDataset = anychart.data.set(johnsonData);
+          // create dataset for the bottom datapoints - wedding
+          var weddingDataset = anychart.data.set(weddingData);
 
-          // map the bottom dataset - Johnson
-          var johnsonDatasetMapping =johnsonDataset.mapAs({
+          // map the bottom dataset - wedding
+          var weddingDatasetMapping =weddingDataset.mapAs({
             x: 'date',
             value: 'title'
           });
 
-          // create bottom series - Johnson
-          var johnsonSeries = chart.moment(johnsonDatasetMapping);
+          // create bottom series - Weddings
+          var weddingSeries = chart.moment(weddingDatasetMapping);
 
           // set the direction for the series
-          johnsonSeries.direction("down");
+          weddingSeries.direction("down");
 
-          // set tooltip settings for the Johnson series
-          johnsonSeries
+          // set tooltip settings for the Wedding series
+          weddingSeries
               .tooltip()
               .useHtml(true)
               .titleFormat('{%title}')
@@ -157,23 +157,23 @@
                 + '<br/><br/>Date: <b>{%date}{type:date}</b><br/>'
               );
 
-          // create dataset for the bottom datapoints - Novavax
-          var novavaxDataset = anychart.data.set(novavaxData);
+          // create dataset for the bottom datapoints - Other
+          var otherDataset = anychart.data.set(otherData);
 
-          // map the bottom dataset - Novavax
-          var novavaxDatasetMapping = novavaxDataset.mapAs({
+          // map the bottom dataset - other
+          var otherDatasetMapping = otherDataset.mapAs({
             x: 'date',
             value: 'title'
           });
 
-          // create bottom series - Novavax
-          var novavaxSeries = chart.moment(novavaxDatasetMapping);
+          // create bottom series - other
+          var otherSeries = chart.moment(otherDatasetMapping);
 
           // set the direction for the series
-         novavaxSeries.direction("down");
+         otherSeries.direction("down");
 
-          // set tooltip settings for the Novavax series
-          novavaxSeries
+          // set tooltip settings for the other series
+          otherSeries
               .tooltip()
               .useHtml(true)
               .titleFormat('{%title}')
