@@ -47,17 +47,7 @@
                 data.generations[i].start,
                 data.generations[i].end
               ]
-            ])
-            .fill(function(d){
-              if(d.name == "Pfizer/BioNTech Trial"){
-                return "#FD8060"  
-              }else if(d.name == "Review"){
-                return "#FEE191"
-              }
-              return "#B0D8A4"
-            })
-            .stroke("none");
-
+            ]);
             // set tooltip settings for the main timeline series
             series
               .tooltip()
